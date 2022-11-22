@@ -9,7 +9,10 @@ public class WinTrigger : MonoBehaviour
     // Get the player gameobject to set timer to false
     public GameObject playerTimer;
     // Set the timer text for the canvas
-    public Text TimerText;
+    public Text FinalTime;
+    public GameObject winCanvas;
+    public GameObject timerCanvas;
+
 
     // End the timer
     void OnTriggerEnter(Collider other)
@@ -17,8 +20,11 @@ public class WinTrigger : MonoBehaviour
         if (other.name == "Player")
         {
             playerTimer.GetComponent<Timer>().enabled = false;
-            TimerText.fontSize = 60;
-            TimerText.color = Color.green;
+            winCanvas.SetActive(true);
+            timerCanvas.SetActive(false);
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            playerTimer.GetComponent<Timer>().Win();
         }
     }
 }
