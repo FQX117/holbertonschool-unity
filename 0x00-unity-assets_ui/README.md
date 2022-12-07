@@ -1,1 +1,1 @@
-small platformer in development
+# 0x02. Unity - Scripting

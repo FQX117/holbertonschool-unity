@@ -2,28 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-/// <summary>
-/// Load the level scene when the player click in the level button
-/// </summary>
 public class MainMenu : MonoBehaviour
 {
-    /// <summary>
-    /// Load the level selected by the player
-    /// </summary>
-    /// <param name="level">The level selected</param>
-    public void LevelSelect(int level)
+    public Material trapMat;
+    public Material goalMat;
+    public Toggle colorblindMode;
+    // Start is called before the first frame update
+    void Start()
     {
-        SceneManager.LoadScene("Level0" + level.ToString());
+        
     }
 
-    /// <summary>
-    /// Load options menu
-    /// Store the current index of the scene in a playerpref
-    /// </summary>
-    public void Options()
+    // Update is called once per frame
+    void Update()
     {
-        PlayerPrefs.SetInt("PreviousScene", SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene("Options");
+
+    }
+    public void PlayMaze()
+    {
+        if (colorblindMode.isOn == true)
+        {
+            trapMat.color = new Color32(255, 112, 0, 1);
+            goalMat.color = Color.blue;
+        }
+        else
+        {
+            trapMat.color = Color.red;
+            goalMat.color = Color.green;
+        }
+        SceneManager.LoadScene("maze");
+    }
+    public void QuitMaze()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
 }
