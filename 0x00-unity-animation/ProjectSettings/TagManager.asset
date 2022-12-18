@@ -8,11 +8,12 @@ TagManager:
   - Trap
   - Goal
   - End
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ground
   - Water
   - UI
   - 

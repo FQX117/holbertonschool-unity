@@ -6,16 +6,16 @@ using UnityEngine;
 public class TimerTrigger : MonoBehaviour
 {
     // Get the player gameobject to set timer to false
-    public GameObject playerTimer;
+    public Timer timer;
     // Get the trigger box for destroy it.
     public GameObject triggerBox;
 
     // When the player move, enable the timer
-    void OnTriggerExit(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Player")
+        if (other.CompareTag("Player"))
         {
-            playerTimer.GetComponent<Timer>().enabled = true;
+            timer.enabled = true;
             Destroy(triggerBox);
         }
     }

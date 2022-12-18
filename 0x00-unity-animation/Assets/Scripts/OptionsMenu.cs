@@ -9,6 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class OptionsMenu : MonoBehaviour
 {
+    
     void Start()
     {
         GameObject.Find("InvertYToggle").GetComponent<Toggle>().isOn = (PlayerPrefs.GetInt("yInverted") == 1) ? true : false;
@@ -19,7 +20,8 @@ public class OptionsMenu : MonoBehaviour
     /// </summary>
     public void Back()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("PreviousScene"));
+       SceneManager.LoadScene(PlayerPrefs.GetInt("PreviousScene"));
+       Time.timeScale = 1;
     }
 
     /// <summary>
