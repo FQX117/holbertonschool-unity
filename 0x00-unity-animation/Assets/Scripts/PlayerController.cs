@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     
 
+    
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //jump
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 

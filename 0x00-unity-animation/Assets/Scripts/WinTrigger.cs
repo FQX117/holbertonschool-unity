@@ -12,6 +12,7 @@ public class WinTrigger : MonoBehaviour
     public Text FinalTime;
     public GameObject winCanvas;
     public GameObject timerCanvas;
+    public GameObject FX;
 
 
     // End the timer
@@ -22,6 +23,7 @@ public class WinTrigger : MonoBehaviour
             playerTimer.GetComponent<Timer>().enabled = false;
             winCanvas.SetActive(true);
             timerCanvas.SetActive(false);
+            FX.SetActive(false);
             Time.timeScale = 0;
             Cursor.visible = true;
             playerTimer.GetComponent<Timer>().Win();

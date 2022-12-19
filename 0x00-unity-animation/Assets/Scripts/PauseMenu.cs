@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 /// <summary>
 /// Handle all functionnality of pausemenu
@@ -10,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 {
     /// <summary>Get the GameObject pauseCanvas to setactive</summary>
     public GameObject PauseCanvas;
+    public AudioMixerSnapshot pause;
+    public AudioMixerSnapshot play;
 
     /// <summary>
     /// Activate the pause menu when the player press ESC
@@ -19,6 +22,7 @@ public class PauseMenu : MonoBehaviour
         PauseCanvas.SetActive(true);
         Time.timeScale = 0;
         Cursor.visible = true;
+        pause.TransitionTo(.01f);
     }
 
     /// <summary>
@@ -29,6 +33,7 @@ public class PauseMenu : MonoBehaviour
         PauseCanvas.SetActive(false);
         Time.timeScale = 1;
         Cursor.visible = false;
+        play.TransitionTo(.01f);
     }
 
     /// <summary>
@@ -47,6 +52,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+        play.TransitionTo(.01f);
     }
 
     /// <summary>
