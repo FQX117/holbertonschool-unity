@@ -60,8 +60,16 @@ Material:
     - _Normal_Streanth: 0.124
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RippleDensity: 8
+    - _RippleSlimness: 4.6
     - _Strangth: 0.56
+    - _WaveSize: 1
+    - _WaveSpeed: 0.13
+    - _speed: 1.54
     m_Colors:
+    - _BaseColor: {r: 0.048415788, g: 0.6037736, b: 0.5257739, a: 0}
     - _Deep: {r: 0.20714667, g: 0.25932297, b: 0.33018863, a: 0}
+    - _RippelColor: {r: 0.5803922, g: 1.717647, b: 1.717647, a: 0}
     - _Shallow: {r: 0.2415895, g: 0.7657914, b: 0.8396226, a: 0}
+    - _WaveSize: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
